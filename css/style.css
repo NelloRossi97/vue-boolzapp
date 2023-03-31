@@ -48,10 +48,24 @@
     border: 1px solid white;
 }
 
+.chat-container{
+    height: calc(100% - 194px);
+}
+.chat{
+    height: 80px;
+}
+.chat:hover{
+    background-color: var(--grey-primary);
+    cursor: pointer;
+}
 /* UTILITIES */
 
 .fs-smaller-08{
     font-size: 0.8rem;
+}
+
+.subtitle-color{
+    color: var(--grey-subtitle);
 }
 @media screen and (max-width: 992px){
     .container-all{

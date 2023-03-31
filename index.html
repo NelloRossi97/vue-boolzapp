@@ -17,13 +17,15 @@
                 <div class="container-left h-100">
                     <!-- top nav with user info and menu -->
                     <div class="top-nav d-flex justify-content-between align-items-center">
+                        <!-- container of profile img -->
                         <div class="img-container w-25">
                             <img src="./img/me.jpg" alt="my image" class="rounded-circle img-avatar ms-3">
                         </div>
-                        <div class="icons-container">
-                            <img src="./img/community-icon.svg" alt="community" class="me-3 align-self-center">
-                            <img src="./img/status-icon.svg" alt="status" class="me-3">
-                            <img src="./img/message-icon.svg" alt="message" class="me-3">
+                        <!-- container of icons -->
+                        <div class="icons-container d-flex">
+                            <img src="./img/community-icon.svg" alt="community" class="me-3 align-self-center d-none d-md-block">
+                            <img src="./img/status-icon.svg" alt="status" class="me-3 d-none d-md-block">
+                            <img src="./img/message-icon.svg" alt="message" class="me-3 d-none d-md-block">
                             <img src="./img/menu-icon.svg" alt="menu" class="me-3">
                         </div>
                     </div>
@@ -39,12 +41,26 @@
                     </div>
                     <!-- search bar -->
                     <div class="input-group p-2">
-                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="basic-addon1">
+                        <span class="input-group-text" id="search"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="search">
                     </div>
                     <!-- chat container -->
-                    <div class="chat-container">
-                        
+                    <div class="chat-container overflow-auto">
+                        <!-- repeating the chats for every element of the array -->
+                        <div class="chat d-flex align-items-center p-2 justify-content-between" v-for="(contact, index) in contacts">
+                            <div class="chat-left d-flex align-items-center">
+                                <div class="img-container rounded-circle shadow-4-strong">
+                                    <img :src="contact.avatar" :alt="contact.name" class="img-avatar rounded-circle me-3">
+                                </div>
+                                <div class="chat-text">
+                                    <span class="fw-bold d-block">{{contact.name}}</span>
+                                    <span class="fs-smaller-08 subtitle-color">{{contact.messages[contact.messages.length - 1].message}}</span>
+                                </div>
+                            </div>
+                            <div class="chat-right fs-smaller-08 subtitle-color align-self-end">
+                                <p>{{contact.messages[contact.messages.length - 1].date}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- container right -->
