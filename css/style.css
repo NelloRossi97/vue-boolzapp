@@ -1,0 +1,27 @@
+:root{
+    --green-primary: #00a884;
+    --grey-primary: #f0f2f5;
+    --grey-subtitle: #8696a0;
+    --grey-icons: #54656f;
+}
+
+#app{
+    background: #00a884;
+    background: linear-gradient(180deg, rgba(0,168,132,1) 0%, rgba(0,168,132,1) 15%, rgba(228,226,222,1) 15%);
+    width: 100vw;
+    height: 100vh;
+}
+
+.container-all{
+    margin: auto;
+    width: 85vw;
+    height: 95vh;
+    background-color: white;
+}
+
+@media screen and (max-width: 992px){
+    .container-all{
+        width: 100vw;
+        height: 100vh;
+    }
+}
