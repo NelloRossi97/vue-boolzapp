@@ -45,27 +45,52 @@
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="search">
                     </div>
                     <!-- chat container -->
-                    <div class="chat-container overflow-auto">
+                    <div class="chats-container overflow-auto">
                         <!-- repeating the chats for every element of the array -->
-                        <div class="chat d-flex align-items-center p-2 justify-content-between" v-for="(contact, index) in contacts">
-                            <div class="chat-left d-flex align-items-center">
+                        <div class="chats d-flex align-items-center p-2 justify-content-between" v-for="(contact, index) in contacts">
+                            <div class="chats-left d-flex align-items-center">
                                 <div class="img-container rounded-circle shadow-4-strong">
                                     <img :src="contact.avatar" :alt="contact.name" class="img-avatar rounded-circle me-3">
                                 </div>
-                                <div class="chat-text">
+                                <div class="chats-text">
                                     <span class="fw-bold d-block">{{contact.name}}</span>
                                     <span class="fs-smaller-08 subtitle-color">{{contact.messages[contact.messages.length - 1].message}}</span>
                                 </div>
                             </div>
-                            <div class="chat-right fs-smaller-08 subtitle-color align-self-end">
+                            <div class="chats-right fs-smaller-08 subtitle-color align-self-end">
                                 <p>{{contact.messages[contact.messages.length - 1].date}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- container right -->
-                <div class="container-right h-100 debug">
+                <div class="container-right h-100">
+                    <div class="top-nav d-flex justify-content-between align-items-center">
+                        <!-- container of profile img -->
+                        <div class="img-container d-flex">
+                            <img src="./img/me.jpg" alt="my image" class="rounded-circle img-avatar mx-3">
+                            <div>
+                                <span class="fw-bold d-block">Nello</span>
+                                <span class="fs-smaller-08 subtitle-color">Ultimo accesso oggi alle: data</span>
+                            </div>
+                            
+                        </div>
+                        <!-- container of icons -->
+                        <div class="icons-container d-flex align-items-center"> 
+                            <i class="fa-solid fa-magnifying-glass me-4 d-none d-md-block icons-color"></i>
+                            <img src="./img/archived-icon.svg" alt="status" class="me-3 d-none d-md-block">
+                            <img src="./img/menu-icon.svg" alt="menu" class="me-3">
+                        </div>
+                    </div>
+                    <div class="chat-container overflow-auto">
 
+                    </div>
+                    <div class="send-bar d-flex justify-content-between align-items-center p-3">
+                        <i class="fa-regular fa-face-smile icons-color me-3"></i>
+                        <i class="fa-solid fa-paperclip icons-color"></i>
+                        <input type="text" class="form-control mx-3" placeholder="Scrivi un messaggio">
+                        <i class="fa-solid fa-microphone icons-color"></i>
+                    </div>
                 </div>
             </div>
         </div>
