@@ -12,13 +12,47 @@
     height: 100vh;
 }
 
+.debug{
+    border: 1px solid black;
+}
 .container-all{
     margin: auto;
     width: 85vw;
     height: 95vh;
     background-color: white;
 }
+.container-left{
+    width: 35%;
+}
+.container-right{
+    width: 65%;
+}
+.top-nav{
+    width: 100%;
+    height: 8%;
+    background-color: var(--grey-primary);
+}
 
+.img-avatar{
+    width: 50px;
+    height: 50px;
+}
+
+.icons-container img:hover{
+    cursor: pointer;
+}
+
+.desktop-notifications{
+    background-color: var(--green-primary);
+    height: 10%;
+    border: 1px solid white;
+}
+
+/* UTILITIES */
+
+.fs-smaller-08{
+    font-size: 0.8rem;
+}
 @media screen and (max-width: 992px){
     .container-all{
         width: 100vw;

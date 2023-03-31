@@ -11,8 +11,37 @@
     </head>
     <body>
         <div id="app" class="d-flex align-items-center">
-            <div class="container-all">
-                
+            <!-- container of the chats -->
+            <div class="container-all d-flex">
+                <!-- container left -->
+                <div class="container-left h-100">
+                    <!-- top nav with user info and menu -->
+                    <div class="top-nav d-flex justify-content-between align-items-center">
+                        <div class="img-container w-25">
+                            <img src="./img/me.jpg" alt="my image" class="rounded-circle img-avatar ms-3">
+                        </div>
+                        <div class="icons-container">
+                            <img src="./img/community-icon.svg" alt="community" class="me-3 align-self-center">
+                            <img src="./img/status-icon.svg" alt="status" class="me-3">
+                            <img src="./img/message-icon.svg" alt="message" class="me-3">
+                            <img src="./img/menu-icon.svg" alt="menu" class="me-3">
+                        </div>
+                    </div>
+                    <!-- desktop notifications -->
+                    <div class="desktop-notifications d-flex align-items-center p-3">
+                        <div class="img-container">
+                            <img src="./img/bell-ban.svg" alt="notifications">
+                        </div>
+                        <div class="ms-3">
+                            <span class="fw-bold d-block">Ricevi notifiche di nuovi messaggi</span>
+                            <a href="#" class="fs-smaller-08">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- container right -->
+                <div class="container-right h-100 debug">
+
+                </div>
             </div>
         </div>
         
