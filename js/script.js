@@ -173,8 +173,7 @@ createApp({
                         }
                     ],
                 }
-            ],
-            hoursMinutes: []
+            ]
         }
     },
     methods: {
