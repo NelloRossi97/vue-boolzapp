@@ -72,6 +72,10 @@
     height: 60px;
     background-color: var(--grey-primary);
 }
+
+.send-bar img:hover{
+    cursor: pointer;
+}
 /* UTILITIES */
 
 .fs-smaller-08{
