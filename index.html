@@ -87,7 +87,9 @@
                     </div>
                     <!-- chat container -->
                     <div class="chat-container overflow-auto p-5">
-                        
+                        <div class="single-chat mb-3 d-flex flex-column" v-for="(chat, index) in contacts[indexChat].messages">
+                            <div :class="chat.status === 'sent' ? 'received' : 'sent'">{{chat.message}}</div>
+                        </div>
                     </div>
 
                     <!-- container of send bar -->

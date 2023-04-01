@@ -3,6 +3,7 @@
     --grey-primary: #f0f2f5;
     --grey-subtitle: #8696a0;
     --grey-icons: #54656f;
+    --sent-message: #d9fdd3;
 }
 
 #app{
@@ -89,10 +90,17 @@
 }
 
 .sent{
-    background-color: var(--green-primary);
+    background-color: var(--sent-message);
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 55%;
+    align-self: flex-end;
 }
 .received{
     background-color: var(--grey-primary);
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 55%;
 }
 
 .active{
