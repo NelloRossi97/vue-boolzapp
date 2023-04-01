@@ -76,7 +76,6 @@
                                     {{contacts[indexChat].messages[contacts[indexChat].messages.length - 1].date}}
                                 </span>
                             </div>
-                            
                         </div>
                         <!-- container of icons -->
                         <div class="icons-container d-flex align-items-center"> 
@@ -88,17 +87,19 @@
                     <!-- chat container -->
                     <div class="chat-container overflow-auto p-5">
                         <div class="single-chat mb-3 d-flex flex-column" v-for="(chat, index) in contacts[indexChat].messages">
-                            <div :class="chat.status === 'sent' ? 'received' : 'sent'">{{chat.message}}</div>
+                            <div :class="chat.status === 'sent' ? 'sent' : 'received'" class="px-3">
+                                <p>{{chat.message}}</p>
+                                <span class="float-end subtitle-color fs-smaller-06">{{chat.date}}</span>
+                            </div>
                         </div>
                     </div>
-
                     <!-- container of send bar -->
                     <div class="send-bar d-flex justify-content-between align-items-center p-3">
                         <i class="fa-regular fa-face-smile icons-color me-3"></i>
                         <i class="fa-solid fa-paperclip icons-color"></i>
-                        <input type="text" class="form-control mx-3" placeholder="Scrivi un messaggio">
+                        <input type="text" class="form-control mx-3" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage" v-model="newMessageText">
                         <i class="fa-solid fa-microphone icons-color"></i>
-                        <img src="./img/send.png" alt="send" class="h-75 d-none">
+                        <img src="./img/send.png" alt="send" class="h-75 d-none" @click="sendMessage">
                     </div>
                 </div>
             </div>

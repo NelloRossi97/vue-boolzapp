@@ -82,6 +82,9 @@
     font-size: 0.8rem;
 }
 
+.fs-smaller-06{
+    font-size: 0.6rem;
+}
 .subtitle-color{
     color: var(--grey-subtitle);
 }
