@@ -77,7 +77,6 @@
     cursor: pointer;
 }
 /* UTILITIES */
-
 .fs-smaller-08{
     font-size: 0.8rem;
 }
@@ -88,9 +87,21 @@
 .icons-color{
     color: var(--grey-icons);
 }
+
+.sent{
+    background-color: var(--green-primary);
+}
+.received{
+    background-color: var(--grey-primary);
+}
+
+.active{
+    background-color: var(--grey-primary);
+}
 @media screen and (max-width: 992px){
     .container-all{
         width: 100vw;
         height: 100vh;
     }
 }
+

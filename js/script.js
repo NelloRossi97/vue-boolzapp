@@ -173,11 +173,15 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            chatActive: false,
+            indexChat: 0
         }
     },
     methods: {
-        
+        openChat(index){
+            this.indexChat = index;
+        },
         
     }
 }).mount('#app');
