@@ -99,8 +99,8 @@
                         <i class="fa-regular fa-face-smile icons-color me-3"></i>
                         <i class="fa-solid fa-paperclip icons-color"></i>
                         <input type="text" class="form-control mx-3" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage" v-model="newMessageText">
-                        <i class="fa-solid fa-microphone icons-color"></i>
-                        <img src="./img/send.png" alt="send" class="h-75 d-none" @click="sendMessage">
+                        <i class="fa-solid fa-microphone icons-color" :class="newMessageText != '' ? 'd-none' : ''"></i>
+                        <img src="./img/send.png" alt="send" class="h-75" :class="newMessageText === '' ? 'd-none' : 'd-block'" @click="sendMessage">
                     </div>
                 </div>
             </div>
