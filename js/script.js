@@ -187,6 +187,14 @@ createApp({
             if (this.newMessageText != ''){
                 let hours = new Date().getHours();
                 let minutes = new Date().getMinutes();
+                if(hours < 10)
+                {
+                    hours = "0" + hours;
+                }
+                if(minutes < 10)
+                {
+                    minutes = "0" + minutes;
+                }
                 const newMessage = {
                     date: hours + ":" + minutes,
                     message: this.newMessageText,
