@@ -214,9 +214,18 @@ createApp({
         },
         computerAnswer(){
             let data = this.getHoursAndMinutes();
+            let randomMessagesArray = [
+                'Va bene!',
+                'Ok!',
+                'Tutto chiaro!',
+                'Buonanotte. A domani!',
+                'Ahahahahah',
+                'Si, anch\'io',
+                'Ci vediamo presto!'
+            ]
             const newMessage = {
                 date: data,
-                message: 'Ok!',
+                message: this.randomMessage(randomMessagesArray),
                 status: 'received'
             }
             this.contacts[this.indexChat].messages.push(newMessage);
@@ -233,6 +242,9 @@ createApp({
             }
             localdata = hours + ":" + minutes
             return localdata;
+        },
+        randomMessage(items){
+            return items[Math.floor(Math.random()*items.length)];  
         }
         
     },
