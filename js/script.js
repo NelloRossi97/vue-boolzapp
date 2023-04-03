@@ -187,26 +187,18 @@ createApp({
         },
         sendMessage(){
             if (this.newMessageText != ''){
-                let hours = new Date().getHours();
-                let minutes = new Date().getMinutes();
-                if(hours < 10)
-                {
-                    hours = "0" + hours;
-                }
-                if(minutes < 10)
-                {
-                    minutes = "0" + minutes;
-                }
+                let data = this.getHoursAndMinutes();
                 const newMessage = {
-                    date: hours + ":" + minutes,
+                    date: data,
                     message: this.newMessageText,
                     status: 'sent'
                 }
                 this.contacts[this.indexChat].messages.push(newMessage);
                 this.newMessageText = '';
+                const timeout = setTimeout(this.computerAnswer, 4000);
             }
         },
-        filteredContacts() {
+        filteredContacts(){
             if (this.search === ''){
                 // if the input is void filteredArray contain all the contacts array
                 this.filteredArray = this.contacts;
@@ -219,6 +211,28 @@ createApp({
                     }
                 })
             }
+        },
+        computerAnswer(){
+            let data = this.getHoursAndMinutes();
+            const newMessage = {
+                date: data,
+                message: 'Ok!',
+                status: 'received'
+            }
+            this.contacts[this.indexChat].messages.push(newMessage);
+        },
+        getHoursAndMinutes(){
+            let hours = new Date().getHours();
+            let minutes = new Date().getMinutes();
+            let localdata = "";
+            if(hours < 10){
+                hours = "0" + hours;
+            }
+            if(minutes < 10){
+                minutes = "0" + minutes;
+            }
+            localdata = hours + ":" + minutes
+            return localdata;
         }
         
     },
