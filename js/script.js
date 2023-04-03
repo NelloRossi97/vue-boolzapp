@@ -176,7 +176,9 @@ createApp({
             ],
             chatActive: false,
             indexChat: 0,
-            newMessageText: ''
+            newMessageText: '',
+            search: "",
+            filteredArray: ""
         }
     },
     methods: {
@@ -204,5 +206,20 @@ createApp({
                 this.newMessageText = '';
             }
         },
-    }
+        filteredContacts() {
+            if (this.search === ''){
+                // if the input is void filteredArray contain all the contacts array
+                this.filteredArray = this.contacts;
+            }else{
+                //else filteredArray contains a filter of the contacts array
+                this.filteredArray = this.contacts.filter(contact =>{
+                    // if the input is includes in the list of contacts names or in the list of messages it returns true
+                    if(contact.name.toLowerCase().includes(this.search.toLowerCase()) || contact.messages.some(text => text.message.toLowerCase().includes(this.search.toLowerCase()))){
+                        return true;
+                    }
+                })
+            }
+        }
+        
+    },
 }).mount('#app');
