@@ -69,6 +69,16 @@
     height: calc(100% - 120px);
     background-image: url(../img/mine.jpg);
 }
+
+.dropdown{
+    opacity: 0;
+}
+#chat-content:hover{
+    cursor: pointer;
+}
+#chat-content:hover .dropdown{
+    opacity: 100;
+}
 .send-bar{
     height: 60px;
     background-color: var(--grey-primary);

@@ -86,11 +86,28 @@
                         </div>
                     </div>
                     <!-- chat container -->
-                    <div class="chat-container overflow-auto p-5">
+                    <div class="chat-container overflow-y-auto p-5">
+                        <!-- single chat -->
                         <div class="single-chat mb-3 d-flex flex-column" v-for="(chat, index) in contacts[indexChat].messages">
-                            <div :class="chat.status === 'sent' ? 'sent' : 'received'" class="px-3">
+                            <div id="chat-content" class="d-flex" :class="chat.status === 'sent' ? 'sent' : 'received'" class="px-3">
                                 <p>{{chat.message}}</p>
-                                <span class="float-end subtitle-color fs-smaller-06">{{chat.date}}</span>
+                                <!-- container dropdown menu and date -->
+                                <div class="d-flex flex-column">
+                                    <div class="dropdown align-self-end">
+                                        <div @click="invertExpand">
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                        <div class="dropdown-menu" :class="expand && 'show'">
+                                            <a class="dropdown-item" href="#">Elimina messaggio</a>
+                                            <a class="dropdown-item" href="#">Info messaggio</a>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <span class="subtitle-color fs-smaller-06 align-self-end">{{chat.date}}</span>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                     </div>

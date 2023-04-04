@@ -178,7 +178,8 @@ createApp({
             indexChat: 0,
             newMessageText: '',
             search: "",
-            filteredArray: ""
+            filteredArray: "",
+            expand: false
         }
     },
     methods: {
@@ -245,6 +246,10 @@ createApp({
         },
         randomMessage(items){
             return items[Math.floor(Math.random()*items.length)];  
+        },
+        invertExpand(){
+            this.expand = !this.expand;
+            console.log(this.expand);
         }
         
     },
