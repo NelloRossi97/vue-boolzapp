@@ -122,9 +122,9 @@
                         </div>
                         
                         <i class="fa-solid fa-paperclip icons-color"></i>
-                        <input type="text" class="form-control mx-3" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage" v-model="newMessageText">
+                        <input type="text" class="form-control mx-3" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage" v-model.trim="newMessageText">
                         <i class="fa-solid fa-microphone icons-color" :class="newMessageText != '' ? 'd-none' : ''"></i>
-                        <img src="./img/send.png" alt="send" class="h-75" :class="newMessageText === '' ? 'd-none' : 'd-block'" @click="sendMessage">
+                        <i class="fa-solid fa-paper-plane icons-color" :class="newMessageText === '' ? 'd-none' : 'd-block'" @click="sendMessage"></i>
                     </div>
                 </div>
             </div>
