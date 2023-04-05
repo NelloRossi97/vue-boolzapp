@@ -102,7 +102,7 @@
                                         </div>
                                         <div class="dropdown-menu" :class="expand && 'show'">
                                             <a class="dropdown-item" href="#">Elimina messaggio</a>
-                                            <a class="dropdown-item" href="#">Info messaggio</a>
+                                            <a class="dropdown-item" href="#" @click="deleteChat(chat.message[index])">Elimina tutta la chat</a>
                                         </div>
                                     </div>
 

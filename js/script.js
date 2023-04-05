@@ -255,6 +255,8 @@ createApp({
         onSelectEmoji(emoji) {           
             this.newMessageText += emoji.i;
         },
-        
+        deleteChat(index){
+            this.contacts.splice(index, 1);
+        }
     },
 }).component('Picker', Picker).mount('#app');
