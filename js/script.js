@@ -181,12 +181,14 @@ createApp({
             search: "",
             filteredArray: "",
             expand: false,
-            showEmoji: false
+            showEmoji: false,
+            contactSelected: ''
         }
     },
     methods: {
         openChat(index){
-            this.indexChat = index;
+            this.indexChat = this.contacts.findIndex(contact => contact.id === index);
+            this.contactSelected = this.contacts.find(contact => contact.id === index).id;
         },
         sendMessage(){
             if (this.newMessageText != ''){
