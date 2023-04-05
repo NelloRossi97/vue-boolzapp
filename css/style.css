@@ -101,7 +101,9 @@
 .icons-color{
     color: var(--grey-icons);
 }
-
+.max-width-100{
+    max-width: 100%;
+}
 .sent{
     background-color: var(--sent-message);
     border-radius: 5px;

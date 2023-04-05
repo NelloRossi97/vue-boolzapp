@@ -93,9 +93,9 @@
                         <!-- single chat -->
                         <div class="single-chat mb-3 d-flex flex-column" v-for="(chat, index) in contacts[indexChat].messages">
                             <div id="chat-content" class="d-flex" :class="chat.status === 'sent' ? 'sent' : 'received'" class="px-3">
-                                <p>{{chat.message}}</p>
+                                <p class="max-width-100 text-break">{{chat.message}}</p>
                                 <!-- container dropdown menu and date -->
-                                <div class="d-flex flex-column">
+                                <div class="d-flex flex-column justify-content-between">
                                     <div class="dropdown align-self-end">
                                         <div @click="invertExpand">
                                             <i class="fa fa-angle-down"></i>
