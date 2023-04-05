@@ -91,6 +91,11 @@
 .send-bar img:hover{
     cursor: pointer;
 }
+
+.v3-emoji-picker{
+    position: absolute;
+    bottom: 60px;
+}
 /* UTILITIES */
 .fs-smaller-08{
     font-size: 0.8rem;

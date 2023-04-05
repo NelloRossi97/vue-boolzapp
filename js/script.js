@@ -252,19 +252,8 @@ createApp({
         invertExpand(){
             this.expand = !this.expand;
         },
-        onSelectEmoji(emoji) {
-            console.log(emoji)
+        onSelectEmoji(emoji) {           
             this.newMessageText += emoji.i;
-            /*
-              // result
-              { 
-                  i: "😚", 
-                  n: ["kissing face"], 
-                  r: "1f61a", // with skin tone
-                  t: "neutral", // skin tone
-                  u: "1f61a" // without tone
-              }
-              */
         },
         
     },
