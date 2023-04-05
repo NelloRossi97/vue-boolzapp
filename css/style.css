@@ -79,6 +79,10 @@
 #chat-content:hover .dropdown{
     opacity: 100;
 }
+
+.sent .dropdown-menu{
+    right: 0;
+}
 .send-bar{
     height: 60px;
     background-color: var(--grey-primary);

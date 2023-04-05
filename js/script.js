@@ -251,7 +251,6 @@ createApp({
         },
         invertExpand(){
             this.expand = !this.expand;
-            console.log(this.expand);
         },
         onSelectEmoji(emoji) {
             console.log(emoji)
