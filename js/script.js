@@ -189,6 +189,7 @@ createApp({
         openChat(index){
             this.indexChat = this.contacts.findIndex(contact => contact.id === index);
             this.contactSelected = this.contacts.find(contact => contact.id === index).id;
+            this.scrollLastMsg();
         },
         sendMessage(){
             if (this.newMessageText != ''){
@@ -199,6 +200,7 @@ createApp({
                     status: 'sent'
                 }
                 this.contacts[this.indexChat].messages.push(newMessage);
+                this.scrollLastMsg();
                 this.newMessageText = '';
                 const timeout = setTimeout(this.computerAnswer, 4000);
             }
@@ -234,6 +236,7 @@ createApp({
                 status: 'received'
             }
             this.contacts[this.indexChat].messages.push(newMessage);
+            this.scrollLastMsg();
         },
         getHoursAndMinutes(){
             let hours = new Date().getHours();
@@ -259,6 +262,12 @@ createApp({
         },
         deleteChat(index){
             this.contacts.splice(index, 1);
+        },
+        scrollLastMsg(){
+            this.$nextTick(() => {
+                this.$refs.chat[this.$refs.chat.length -1].scrollIntoView({behavior: 'smooth'})
+            })
         }
+        
     },
 }).component('Picker', Picker).mount('#app');

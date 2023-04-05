@@ -5,6 +5,12 @@
     --grey-icons: #54656f;
     --sent-message: #d9fdd3;
 }
+.chat-container::-webkit-scrollbar {
+    display: none;
+}
+.chats-container::-webkit-scrollbar {
+    display: none;
+}
 
 #app{
     background: #00a884;
