@@ -1,3 +1,4 @@
+import Picker from './emoji-picker.js';
 const {createApp} = Vue;
 
 createApp({
@@ -179,7 +180,8 @@ createApp({
             newMessageText: '',
             search: "",
             filteredArray: "",
-            expand: false
+            expand: false,
+            showEmoji: false
         }
     },
     methods: {
@@ -250,7 +252,21 @@ createApp({
         invertExpand(){
             this.expand = !this.expand;
             console.log(this.expand);
-        }
+        },
+        onSelectEmoji(emoji) {
+            console.log(emoji)
+            this.newMessageText += emoji.i;
+            /*
+              // result
+              { 
+                  i: "😚", 
+                  n: ["kissing face"], 
+                  r: "1f61a", // with skin tone
+                  t: "neutral", // skin tone
+                  u: "1f61a" // without tone
+              }
+              */
+        },
         
     },
-}).mount('#app');
+}).component('Picker', Picker).mount('#app');
